@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./instruction_selection/Tree",
+        "./instruction_selection/Tree"
+    ]
+}

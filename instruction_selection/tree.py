@@ -25,21 +25,25 @@ class Tree:
         return instruction_type in ["CONST", "TEMP"]
 
     def draw(self):
-        """Inicia o processo de desenhar a árvore a partir da raiz."""
-        self._draw_recursive(self.root)
+        self._draw_recursive(self.root, "", True)
 
-    def _draw_recursive(self, node: Node, indent_level: int = 0):
-        """
-        Desenha a árvore recursivamente no terminal.
-        """
-        if node is not None:
-            indent_step = 4
+    def _draw_recursive(self, node: Node, indent: str, is_last_child: bool):
+        if node is None:
+            return
+        
+        if indent is not "":
+            print(indent + ("`-> " if is_last_child else "|-> ") + node.instruction)
+        else:
+            print("    " + node.instruction)
+        
+        child_indent = indent + ("    " if is_last_child else "|   ")
 
-            self._draw_recursive(node.right, indent_level + indent_step)
-
-            print(" " * indent_level + "-> " + node.instruction)
-
-            self._draw_recursive(node.left, indent_level + indent_step)
+        # Remove os nós-filho vazios
+        children = [child for child in node.get_children() if child]
+        
+        for i, child in enumerate(children):
+            is_child_last = (i == len(children) - 1)
+            self._draw_recursive(child, child_indent, is_child_last)
 
     def create_tree(self, linear_code: str):
         """
