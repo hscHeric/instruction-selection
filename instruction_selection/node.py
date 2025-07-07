@@ -9,14 +9,10 @@ Autores: Heric da Silva Cruz - 548317,
 
 
 class Node:
-    """Representa um nó na árvore de expressão."""
 
     def __init__(self, instruction: str):
         """
-        Inicializa um nó.
-
-        Args:
-            instruction: A instrução associada a este nó.
+        Inicializa um nó com a instrução associada a ele..
         """
         self.instruction = instruction
         self.parent = None
@@ -30,13 +26,7 @@ class Node:
 
     def get_value(self, reg: int = 0) -> str:
         """
-        Obtém o valor ou registrador associado a uma instrução.
-
-        Args:
-            reg: O número do registrador a ser usado como padrão.
-
-        Returns:
-            O valor ou nome do registrador como uma string.
+        Retorna o valor ou registrador associado a uma instrução.
         """
         parts = self.instruction.split()
         instr_type = parts[0]
