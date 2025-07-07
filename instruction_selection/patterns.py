@@ -12,9 +12,6 @@ from .config import INSTRUCTION_COSTS
 
 
 def calculate_cost(patterns: list) -> int:
-    """
-    Calcula o custo total a partir de uma lista de padrões e seus custos.
-    """
     total_cost = 0
     for _, pattern_name in patterns:
         total_cost += INSTRUCTION_COSTS.get(pattern_name, 0)
@@ -22,14 +19,6 @@ def calculate_cost(patterns: list) -> int:
 
 
 def traverse_tree(node: Node) -> list:
-    """
-    Percorre a árvore em pós-ordem para extrair os padrões de forma otimizada.
-    Este método de travessia garante que um nó só seja processado após
-    seus filhos, o que é a base para a solução com programação dinâmica.
-
-    Retorna:
-        Uma lista de tuplas contendo o nó e o nome do padrão correspondente.
-    """
     patterns = []
 
     def post_order_traversal(n: Node):
@@ -48,9 +37,6 @@ def traverse_tree(node: Node) -> list:
 
 
 def find_pattern_for_node(node: Node) -> str:
-    """
-    Identifica o maior padrão de instrução (maximal munch) para um nó.
-    """
     if node.is_used:
         return ""
 

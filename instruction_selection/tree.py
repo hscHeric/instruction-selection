@@ -11,15 +11,11 @@ from .node import Node
 
 
 class Tree:
-    """Representa e gerencia a árvore de expressão."""
-
     def __init__(self, root: Node = None):
-        """Inicializa a árvore."""
         self.root = root
         self.REDUCIBLE_INSTRUCTIONS = {"MOVE", "MEM", "+", "-", "*", "/"}
 
     def _is_compound_instruction(self, instruction_type: str) -> bool:
-        """Verifica se a instrução é composta (ex: 'CONST 1')."""
         return instruction_type in ["CONST", "TEMP"]
 
     def draw(self):
@@ -36,7 +32,6 @@ class Tree:
 
         child_indent = indent + ("    " if is_last_child else "|   ")
 
-        # Remove os nós-filho vazios
         children = [child for child in node.get_children() if child]
 
         for i, child in enumerate(children):
@@ -44,9 +39,6 @@ class Tree:
             self._draw_recursive(child, child_indent, is_child_last)
 
     def create_tree(self, linear_code: str):
-        """
-        Cria a árvore a partir de uma representação de código linear.
-        """
         formatted_code = (
             linear_code.replace("(", " ( ").replace(")", " ) ").replace(",", " , ")
         )
@@ -55,9 +47,6 @@ class Tree:
         self.root = self._create_tree_recursive(tokens)
 
     def _create_tree_recursive(self, tokens: list) -> Node:
-        """
-        Função auxiliar recursiva que constrói a árvore consumindo a lista de tokens.
-        """
         if not tokens:
             return None
 
@@ -71,15 +60,15 @@ class Tree:
         instruction_type = token.split()[0]
         if instruction_type in self.REDUCIBLE_INSTRUCTIONS:
             if tokens and tokens[0] == "(":
-                tokens.pop(0)  # Consome o '('
+                tokens.pop(0)
 
             node.left = self._create_tree_recursive(tokens)
 
             if tokens and tokens[0] == ",":
-                tokens.pop(0)  # Consome a ','
+                tokens.pop(0)
                 node.right = self._create_tree_recursive(tokens)
 
             if tokens and tokens[0] == ")":
-                tokens.pop(0)  # Consome o ')'
+                tokens.pop(0)
 
         return node

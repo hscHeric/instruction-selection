@@ -29,7 +29,6 @@ INSTRUCTION_COSTS = {
     "MOVE -> MEM ===> MEM": 2,
 }
 
-# [Questão 3]
 PATTERNS_INSTRUCTIONS = {
     "+": "ADD r{i} <- {j} + {k}",
     "*": "MUL r{i} <- {j} * {k}",

@@ -4,8 +4,7 @@ Antonio Herik Cosmo Martins - 516098,
 Ezequiel Santos Maia - 521431
 Vitor Galvan Fernandes da Silva - 428953
 
-Este script executa a seleção de instruções para uma representação intermediária.
-Ele lê um arquivo fonte, constrói uma árvore de expressão para cada linha,
+Lê o arquivo data/source.txt, constrói uma árvore de expressão para cada linha,
 identifica padrões de instrução, calcula o custo e gera o código Assembly correspondente.
 
 Uso:
@@ -31,7 +30,6 @@ def main():
 
                 print(f" Instrução {instruction_counter} ")
 
-                # 1. Criar a Árvore
                 print("\nÁrvore: ")
                 tree = Tree()
                 tree.create_tree(line)

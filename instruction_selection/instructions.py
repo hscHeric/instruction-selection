@@ -11,9 +11,6 @@ from .config import PATTERNS_INSTRUCTIONS
 
 
 def get_instructions(patterns: list) -> str:
-    """
-    Gera o código Assembly a partir de uma lista de padrões.
-    """
     reg1, reg2 = 1, 2
     output_lines = []
 
