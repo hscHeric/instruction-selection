@@ -5,8 +5,9 @@ Ezequiel Santos Maia - 521431
 Vitor Galvan Fernandes da Silva - 428953
 
 Lê o arquivo data/source.txt, constrói uma árvore de expressão para cada linha,
-identifica padrões de instrução, calcula o custo e gera o código Assembly correspondente.
+identifica padrões de instrução, calcula o custo e gera o código Assembly
 
+O resultado de todo o processo é impresso no terminal como foi pedido no pdf de enunciado do trabalho
 Uso:
     python main.py
 """
