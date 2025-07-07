@@ -4,11 +4,7 @@ Autores: Heric da Silva Cruz - 548317,
          Ezequiel Santos Maia - 521431,
          Vitor Galvan Fernandes da Silva - 428953
 
-[Questão 1, 2 e 3] - Este módulo define a classe 'Node', a estrutura de
-dados essencial que representa um nó na árvore de expressão. Cada nó contém
-uma instrução e ponteiros para seus filhos. A árvore construída com estes
-nós é a base para a impressão da árvore (Questão 1), a seleção de padrões
-(Questão 2) e a geração do código final (Questão 3).
+[Questão 1, 2 e 3] - Node para árvore de expressão
 """
 
 

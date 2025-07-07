@@ -4,10 +4,7 @@ Autores: Heric da Silva Cruz - 548317,
          Ezequiel Santos Maia - 521431,
          Vitor Galvan Fernandes da Silva - 428953
 
-[Questão 2] - implementa a fase de Seleção de Instrução.
-Ele utiliza uma abordagem de programação dinâmica (percorrendo a árvore em
-pós-ordem) para encontrar os melhores padrões de instrução (tiling) e
-calcular o custo da solução, conforme especificado na Questão 2.
+[Questão 2] - Implementação da seleção de instruções
 """
 
 from .node import Node

@@ -4,9 +4,7 @@ Autores: Heric da Silva Cruz - 548317,
          Ezequiel Santos Maia - 521431,
          Vitor Galvan Fernandes da Silva - 428953
 
-[Questão 1] - Contém a lógica de parsing para construir a árvore e um método
-para imprimi-la no terminal em um formato hierárquico, atendendo aos
-requisitos da Questão 1.
+[Questão 1] - Lógica de parsing para construir a árvore e um método para imprimir no terminal
 """
 
 from .node import Node
@@ -30,19 +28,19 @@ class Tree:
     def _draw_recursive(self, node: Node, indent: str, is_last_child: bool):
         if node is None:
             return
-        
+
         if indent is not "":
             print(indent + ("`-> " if is_last_child else "|-> ") + node.instruction)
         else:
             print("    " + node.instruction)
-        
+
         child_indent = indent + ("    " if is_last_child else "|   ")
 
         # Remove os nós-filho vazios
         children = [child for child in node.get_children() if child]
-        
+
         for i, child in enumerate(children):
-            is_child_last = (i == len(children) - 1)
+            is_child_last = i == len(children) - 1
             self._draw_recursive(child, child_indent, is_child_last)
 
     def create_tree(self, linear_code: str):

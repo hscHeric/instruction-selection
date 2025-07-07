@@ -4,9 +4,7 @@ Autores: Heric da Silva Cruz - 548317,
          Ezequiel Santos Maia - 521431,
          Vitor Galvan Fernandes da Silva - 428953
 
-[Questão 2 e 3] -Esse arquivo apresenta os custos de cada padrão de instrução,
-conforme definido na Questão 2, e os templates de código Assembly para cada
-padrão, necessários para a geração de código da Questão 3.
+[Questão 2 e 3] - Custos e templates do assembly
 """
 
 INSTRUCTION_COSTS = {
